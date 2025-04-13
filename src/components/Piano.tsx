@@ -6,7 +6,7 @@ interface PianoProps {
 }
 
 const Piano = ({ onNoteSelected }: PianoProps) => {
-  // Define the piano layout based on the standard piano keyboard
+  // Define the white and black keys with positions
   const whiteKeys = [
     { note: 'C1', position: 1 },
     { note: 'D1', position: 3 },
@@ -37,6 +37,20 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
     { note: 'A#2', position: 23 },
   ];
 
+  // Map black key notes to the index of their preceding white key
+  const blackKeyOffsets: Record<string, number> = {
+    'C#1': 0,
+    'D#1': 1,
+    'F#1': 3,
+    'G#1': 4,
+    'A#1': 5,
+    'C#2': 7,
+    'D#2': 8,
+    'F#2': 10,
+    'G#2': 11,
+    'A#2': 12,
+  };
+
   const handleKeyPress = (position: number) => {
     onNoteSelected(position);
   };
@@ -54,59 +68,26 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
           />
         ))}
       </div>
-      
-      {/* Black keys positioned between their corresponding white keys */}
+
+      {/* Black keys */}
       <div className="absolute top-0 left-0 right-0 z-10">
-        <div className="relative w-full">
-          {/* C#1 - between C1 and D1 */}
-          <div className="absolute" style={{ left: 'calc(0 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[0].note} position={blackKeys[0].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* D#1 - between D1 and E1 */}
-          <div className="absolute" style={{ left: 'calc(1 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[1].note} position={blackKeys[1].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* F#1 - between F1 and G1 */}
-          <div className="absolute" style={{ left: 'calc(3 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[2].note} position={blackKeys[2].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* G#1 - between G1 and A1 */}
-          <div className="absolute" style={{ left: 'calc(4 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[3].note} position={blackKeys[3].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* A#1 - between A1 and B1 */}
-          <div className="absolute" style={{ left: 'calc(5 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[4].note} position={blackKeys[4].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* C#2 - between C2 and D2 */}
-          <div className="absolute" style={{ left: 'calc(7 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[5].note} position={blackKeys[5].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* D#2 - between D2 and E2 */}
-          <div className="absolute" style={{ left: 'calc(8 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[6].note} position={blackKeys[6].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* F#2 - between F2 and G2 */}
-          <div className="absolute" style={{ left: 'calc(10 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[7].note} position={blackKeys[7].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* G#2 - between G2 and A2 */}
-          <div className="absolute" style={{ left: 'calc(11 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[8].note} position={blackKeys[8].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
-          
-          {/* A#2 - between A2 and B2 */}
-          <div className="absolute" style={{ left: 'calc(12 * 56px + 31px)' }}>
-            <PianoKey note={blackKeys[9].note} position={blackKeys[9].position} isBlack onKeyPress={handleKeyPress} />
-          </div>
+        <div className="relative w-full h-full">
+          {blackKeys.map((key) => (
+            <div
+              key={key.note}
+              className="absolute"
+              style={{
+                left: `calc(${blackKeyOffsets[key.note]} * 56px + 40px)`,
+              }}
+            >
+              <PianoKey
+                note={key.note}
+                position={key.position}
+                isBlack
+                onKeyPress={handleKeyPress}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
