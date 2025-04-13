@@ -34,7 +34,7 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
     { note: 'D#2', position: 12 },
     { note: 'F#2', position: 15 },
     { note: 'G#2', position: 17 },
-    { note: 'A#3', position: 18 },
+    { note: 'A#3', position: 19 },
     { note: 'C#3', position: 22 },
     { note: 'D#3', position: 24 },
   ];
@@ -43,7 +43,7 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
   const blackKeyOffsets: Record<string, number> = {
     'F#1': 1,
     'G#1': 2,
-    'A#2': 3,
+    'A#2': 4,
     'C#2': 5,
     'D#2': 6,
     'F#2': 8,
