@@ -55,59 +55,56 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
         ))}
       </div>
       
-      {/* Black keys */}
-      <div className="absolute flex z-10 top-0">
-        <div className="flex">
-          {/* First octave black keys - C# and D# */}
-          <div className="relative" style={{ left: '9px' }}>
+      {/* Black keys positioned between their corresponding white keys */}
+      <div className="absolute top-0 left-0 right-0 z-10">
+        <div className="relative w-full">
+          {/* C#1 */}
+          <div className="absolute" style={{ left: 'calc(0 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[0].note} position={blackKeys[0].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-          <div className="relative" style={{ left: '23px' }}>
+          
+          {/* D#1 */}
+          <div className="absolute" style={{ left: 'calc(1 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[1].note} position={blackKeys[1].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-        </div>
-        
-        {/* Gap for E */}
-        <div className="w-14"></div>
-        
-        {/* First octave black keys - F#, G#, A# */}
-        <div className="flex">
-          <div className="relative" style={{ left: '-14px' }}>
+          
+          {/* F#1 */}
+          <div className="absolute" style={{ left: 'calc(3 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[2].note} position={blackKeys[2].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-          <div className="relative" style={{ left: '0px' }}>
+          
+          {/* G#1 */}
+          <div className="absolute" style={{ left: 'calc(4 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[3].note} position={blackKeys[3].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-          <div className="relative" style={{ left: '14px' }}>
+          
+          {/* A#1 */}
+          <div className="absolute" style={{ left: 'calc(5 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[4].note} position={blackKeys[4].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-        </div>
-        
-        {/* Gap for B */}
-        <div className="w-14"></div>
-        
-        {/* Second octave black keys - C# and D# */}
-        <div className="flex">
-          <div className="relative" style={{ left: '-14px' }}>
+          
+          {/* C#2 */}
+          <div className="absolute" style={{ left: 'calc(7 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[5].note} position={blackKeys[5].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-          <div className="relative" style={{ left: '0px' }}>
+          
+          {/* D#2 */}
+          <div className="absolute" style={{ left: 'calc(8 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[6].note} position={blackKeys[6].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-        </div>
-        
-        {/* Gap for E */}
-        <div className="w-14"></div>
-        
-        {/* Second octave black keys - F#, G#, A# */}
-        <div className="flex">
-          <div className="relative" style={{ left: '-14px' }}>
+          
+          {/* F#2 */}
+          <div className="absolute" style={{ left: 'calc(10 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[7].note} position={blackKeys[7].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-          <div className="relative" style={{ left: '0px' }}>
+          
+          {/* G#2 */}
+          <div className="absolute" style={{ left: 'calc(11 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[8].note} position={blackKeys[8].position} isBlack onKeyPress={handleKeyPress} />
           </div>
-          <div className="relative" style={{ left: '14px' }}>
+          
+          {/* A#2 */}
+          <div className="absolute" style={{ left: 'calc(12 * 56px + 38px)' }}>
             <PianoKey note={blackKeys[9].note} position={blackKeys[9].position} isBlack onKeyPress={handleKeyPress} />
           </div>
         </div>
