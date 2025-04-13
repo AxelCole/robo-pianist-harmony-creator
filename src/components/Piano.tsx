@@ -29,12 +29,12 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
   const blackKeys = [
     { note: 'F#1', position: 3 },
     { note: 'G#1', position: 5 },
-    { note: 'A#2', position: 6 },
+    { note: 'A#2', position: 7 },
     { note: 'C#2', position: 10 },
     { note: 'D#2', position: 12 },
     { note: 'F#2', position: 15 },
     { note: 'G#2', position: 17 },
-    { note: 'A#3', position: 18 },
+    { note: 'A#3', position: 19 },
     { note: 'C#3', position: 22 },
     { note: 'D#3', position: 24 },
   ];
@@ -48,7 +48,7 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
     'D#2': 6,
     'F#2': 8,
     'G#2': 9,
-    'A#3': 11,
+    'A#3': 10,
     'C#3': 12,
     'D#3': 13,
   };
@@ -72,7 +72,7 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
       </div>
 
       {/* Black keys */}
-      <div className="absolute top-0 left-0 right-0 z-10">
+      <div className="absolute top-0 left-7 right-0 z-10">
         <div className="relative w-full h-full">
           {blackKeys.map((key) => (
             <div

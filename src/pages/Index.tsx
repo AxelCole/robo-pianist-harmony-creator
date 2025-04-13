@@ -56,10 +56,10 @@ const Index = () => {
         </section>
 
         <section>
-          <NoteVisualizer 
-            notes={robotInstructions} 
-            onClear={handleClearNotes} 
-            onSend={handleSendToRobot} 
+          <NoteVisualizer
+            notes={robotInstructions}
+            onClear={handleClearNotes}
+            onSend={handleSendToRobot}
           />
         </section>
       </main>
