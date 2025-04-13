@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				piano: {
+					white: '#FFFFFF',
+					black: '#222222',
+					blue: '#3b82f6',
+					hover: '#4B91F7',
+					pressed: '#1d4ed8',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +92,17 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'key-press': {
+					'0%': { transform: 'translateY(0)', backgroundColor: 'var(--key-color)' },
+					'50%': { transform: 'translateY(4px)', backgroundColor: 'var(--key-pressed)' },
+					'100%': { transform: 'translateY(0)', backgroundColor: 'var(--key-color)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'key-press': 'key-press 0.3s ease-out'
 			}
 		}
 	},
