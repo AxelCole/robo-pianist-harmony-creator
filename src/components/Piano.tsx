@@ -39,16 +39,16 @@ const Piano = ({ onNoteSelected }: PianoProps) => {
 
   // Map black key notes to the index of their preceding white key
   const blackKeyOffsets: Record<string, number> = {
-    'C#1': 0,
-    'D#1': 1,
-    'F#1': 3,
-    'G#1': 4,
-    'A#1': 5,
-    'C#2': 7,
-    'D#2': 8,
-    'F#2': 10,
-    'G#2': 11,
-    'A#2': 12,
+    'C#1': 1,
+    'D#1': 2,
+    'F#1': 4,
+    'G#1': 5,
+    'A#1': 6,
+    'C#2': 8,
+    'D#2': 9,
+    'F#2': 11,
+    'G#2': 12,
+    'A#2': 13,
   };
 
   const handleKeyPress = (position: number) => {
